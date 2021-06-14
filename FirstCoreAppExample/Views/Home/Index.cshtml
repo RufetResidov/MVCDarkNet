@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<a class="btn btn-primary" href="Home/Create">Create</a>
+<table class="table">
+    <thead>
+        <tr style="color:rebeccapurple">
+            <th>Fullname</th>
+            <th>Email</th>
+            <th>Phone header</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewData["List1"] as List<User>)
+        {
+        <tr>
+            <td>@item.FullName</td>
+            <td>@item.Email</td>
+            <td>@item.Password</td>
+            <td><a class="btn btn-danger" href="/Home/Edit/@item.ID">Edit</a></td>
+            <td><a class="btn btn-dark" href="/Home/Delete/@item.ID">Delete</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
